@@ -6,7 +6,7 @@ require './lib/bookmark'
 
 class BookmarkManager < Sinatra::Base
   configure :development do
-    register Sinatra.reloader
+    register Sinatra::Reloader
   end
 
   get '/' do
@@ -14,11 +14,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/bookmarks' do
-      @bookmarks = [
-        "http://www.makersacademy.com ",
-        "http://www.google.com ",
-        "http://www.askjeeves.com"
-      ]
+      @bookmarks = Bookmark.all
 
       erb :'bookmarks/index'
   end

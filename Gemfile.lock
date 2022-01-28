@@ -20,6 +20,7 @@ GEM
       ruby2_keywords (~> 0.0.1)
     nokogiri (1.13.1-arm64-darwin)
       racc (~> 1.4)
+    pg (1.3.0)
     public_suffix (4.0.6)
     racc (1.6.0)
     rack (2.2.3)
@@ -54,6 +55,7 @@ GEM
       sinatra (= 2.1.0)
       tilt (~> 2.0)
     tilt (2.0.10)
+    webrick (1.7.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
 
@@ -62,9 +64,11 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  pg
   rspec
   sinatra
   sinatra-contrib
+  webrick
 
 BUNDLED WITH
    2.2.3
