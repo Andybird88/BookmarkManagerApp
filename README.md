@@ -21,3 +21,9 @@
 2. Once connected enter command `ALTER TABLE bookmarks ADD COLUMN title VARCHAR(60);`
 3. Connect to `\c bookmark_manager_test` database and repeat step 2(This will add the title column to the test database as well).
 4. You can use the psql command `TABLE bookmarks;` to inspect the table and verify that the title column has been added.
+
+# Create a new comments table in the database.
+
+1. Connect to PSQL and `\c bookmark_manager`to connect to the live database.
+2. Run the query saved in the file `03_create_comments_table.sql`.
+3. Repeat steps 1 and 2 for the test database.
