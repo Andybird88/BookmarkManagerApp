@@ -4,7 +4,7 @@ feature 'Adding and viewing comments' do
             bookmark = Bookmark.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
 
             visit '/bookmarks'
-            first('bookmark').click_button 'Add Comment'
+            first('.bookmark').click_button 'Add Comment'
 
             expect(current_path).to eq "/bookmarks/#{bookmark.id}/comments/new"
 
@@ -12,7 +12,7 @@ feature 'Adding and viewing comments' do
             click_button 'Submit'
 
             expect(current_path).to eq '/bookmarks'
-            expect(first('bookmark')).to have_content 'This is a test comment on this bookmark'
+            expect(first('.bookmark')).to have_content 'This is a test comment on this bookmark'
         end
     end
 end

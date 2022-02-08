@@ -3,6 +3,7 @@
 </head>
 <%= flash[:notice] %>
 <body>
+
 <ul>
     <% @bookmarks.each do |bookmark| %>
         <li class="bookmark" id="bookmark.<%= bookmark.id %>"%>
@@ -10,23 +11,38 @@
                 <%= bookmark.title %>
                 <br><br>
             </a>
-            <form action="/bookmarks/<%= bookmark.id %>" method="post">
+            <form action="/bookmarks/<%= bookmark.id %>" method="post" class="inline">
                 <input type="hidden" name="method" value="DELETE" />
                 <input type="submit" value="Delete" id="submit"/>
             </form>
-            <form action="/bookmarks/<%= bookmark.id %>/edit" method="get">
+            <form action="/bookmarks/<%= bookmark.id %>/edit" method="get" class="inline">
                 <input type="submit" value="Edit" id="submit"/>
             </form>
-            <form action="/bookmarks/<%= bookmark.id %>/comments/new" method="get">
-                <input type="submit" value="Add Comment" />
+            <form action="/bookmarks/<%= bookmark.id %>/comments/new" method="get" class="inline">
+                <input type="submit" value="Add Comment" id="submit" />
             </form>
+            <form action='/bookmarks/<%= bookmark.id %>/tags/new' method='get'>
+                <input type="submit" value="Add Tag" />
+            </form>
+            <div>
+            <h2>Comments</h2>
             <ul>
-              <% bookmark.comments.each do |comment| %>
-               <li><%= comment.text %></li>
-               <br><br><br>
-            <%end%>
+            <% bookmark.comments.each do |comment| %>
+                <li><%= comment.text %></li>
+            <% end %>
             </ul>
+            </div>
+            <div>
+                <h2>Tags</h2>
+                <ul>
+                  <% bookmark.tags.each do |tag| %>
+                    <li><%= tag.content %></li>
+                  <% end %>
+                </ul>
+            </div>
         </li>
     <% end %>
+    </div>
+</div>
 <a href="/bookmarks/new">Add a new Bookmark</a>
 </body>
