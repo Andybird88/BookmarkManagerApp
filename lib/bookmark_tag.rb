@@ -1,6 +1,7 @@
 require_relative 'DatabaseConnection'
 
 class BookmarkTag
+    
     def self.create(bookmark_id:, tag_id:)
         result = DatabaseConnection.query(
             "INSERT INTO bookmarks_tags (bookmark_id, tag_id) VALUES($1, $2) RETURNING bookmark_id, tag_id;",

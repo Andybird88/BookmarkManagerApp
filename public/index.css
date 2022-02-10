@@ -1,15 +1,55 @@
 body {
-  background-color: lightblue;
-  color: green
+  background-color: powderblue;
+  color: black;
 }
 
 
 #submit {
  color: rgb(119, 37, 37);
- font-size: 20px;
- display: flex;
  
 }
 
 
+.encapsulate {
+  width: 900px;
+  height: 200px;
+  border: 1px solid;
+  padding: 20px 0;
+  margin: 25px 0;
+  background-color: lightgrey;
+  box-shadow: 5px 10px;
+  
+}
 
+.comments {
+  margin: 1%;
+  float: left;
+  font-size: 10px;
+  
+}
+
+.tags {
+  margin: 1%;
+  float: right;
+  font-size: 10px
+  
+}
+
+.inline {
+  margin: 10px;
+  float: left;
+}
+
+a { background-color: white;
+  color: red;
+  border: solid black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+ 
+
+}
+ul {
+  list-style-type: none;
+  }

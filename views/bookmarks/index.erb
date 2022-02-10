@@ -2,47 +2,81 @@
 <link rel="stylesheet" href="index.css">
 </head>
 <%= flash[:notice] %>
-<body>
 
+<body>
 <ul>
+    <li><a style="float: left; margin: 1%;" href="/bookmarks/new">Home</a></li>
+    <li><a style="margin: 1%;" href="/bookmarks/new">Add a new Bookmark</a></li>
+</ul>
+<ul>
+
     <% @bookmarks.each do |bookmark| %>
+    <div class="encapsulate">
         <li class="bookmark" id="bookmark.<%= bookmark.id %>"%>
-            <a href="<%= bookmark.url %>" target="_blank">
-                <%= bookmark.title %>
-                <br><br>
-            </a>
-            <form action="/bookmarks/<%= bookmark.id %>" method="post" class="inline">
+        <style>
+          a { background-color: white;
+            color: red;
+            border: solid black;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+            }
+          ul {
+            list-style-type: none;
+            }
+        </style>
+           <a target="_blank" href=<%=bookmark.url%>><%=bookmark.title%></a>
+            
+        
+            <br>
+            <br>
+           <form action="/bookmarks/<%= bookmark.id %>" method="post" class="inline">
                 <input type="hidden" name="method" value="DELETE" />
                 <input type="submit" value="Delete" id="submit"/>
             </form>
             <form action="/bookmarks/<%= bookmark.id %>/edit" method="get" class="inline">
                 <input type="submit" value="Edit" id="submit"/>
             </form>
+           
             <form action="/bookmarks/<%= bookmark.id %>/comments/new" method="get" class="inline">
                 <input type="submit" value="Add Comment" id="submit" />
             </form>
-            <form action='/bookmarks/<%= bookmark.id %>/tags/new' method='get'>
-                <input type="submit" value="Add Tag" />
+        
+            <form action='/bookmarks/<%= bookmark.id %>/tags/new' method='get' class="inline">
+                <input type="submit" value="Add Tag" id="submit" />
             </form>
-            <div>
+            <br>
+            <br>
+            <br>
+            <div class="comments">
             <h2>Comments</h2>
             <ul>
             <% bookmark.comments.each do |comment| %>
+         
                 <li><%= comment.text %></li>
             <% end %>
             </ul>
             </div>
-            <div>
+           
+            <div class="tags">
                 <h2>Tags</h2>
                 <ul>
                   <% bookmark.tags.each do |tag| %>
                     <li><%= tag.content %></li>
+                
                   <% end %>
+                 
                 </ul>
             </div>
         </li>
+        
+    </div>
+     
     <% end %>
+   
     </div>
 </div>
-<a href="/bookmarks/new">Add a new Bookmark</a>
+
 </body>
