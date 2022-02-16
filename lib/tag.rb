@@ -1,4 +1,5 @@
 require_relative 'DatabaseConnection'
+require_relative './bookmark'
 
 class Tag
     def self.create(content:)

@@ -31,6 +31,7 @@ class Bookmark
         result = DatabaseConnection.query(
            "INSERT INTO bookmarks (url, title) VALUES($1, $2) RETURNING id, url, title;", [url, title]
         )
+        p result[0]
        Bookmark.new(id: result[0]['id'], url: result[0]['url'], title: result[0]['title'])
     end
 

@@ -12,26 +12,40 @@ body {
 
 .encapsulate {
   width: 900px;
-  height: 200px;
+  height: 230px;
   border: 1px solid;
   padding: 20px 0;
-  margin: 25px 0;
+  margin: 50px 0;
   background-color: lightgrey;
   box-shadow: 5px 10px;
+  list-style-type: none;
   
 }
 
-.comments {
-  margin: 1%;
+
+
+.commentlist {
+  list-style-type: none;
+  border: 1px solid;
+  padding: 2px;
+  text-align: center;
+  background-color: lightblue;
+  width: 50%;
+  position:absolute;
   float: left;
-  font-size: 10px;
-  
+
 }
 
-.tags {
-  margin: 1%;
+
+.tagslist {
+  list-style-type: none;
+  border: 1px solid;
+  padding: 2px;
+  text-align: center;
+  background-color: lightseagreen;
+  width: 25%;
   float: right;
-  font-size: 10px
+ 
   
 }
 
@@ -50,6 +64,29 @@ a { background-color: white;
  
 
 }
-ul {
-  list-style-type: none;
-  }
+
+
+  .bookmarklinks { background-color: white;
+    color: red;
+    border: solid black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+    list-style-type: none;
+    width: 93%;
+    }
+
+    .bookmarklinklist {
+      list-style-type: none;
+    }
+
+    
+
+    .navbar1 {
+      
+      margin: 1%; 
+      list-style-type: none;
+      display: inline-block;
+    }
