@@ -1,5 +1,8 @@
 # BookmarkManagerApp
 
+# About the app
+This app aims to manage website bookmarks so that they can be catagorised and commented on. Helping to keep everything organised. 
+
 # Database Set Up.
 
 1. Connect to PSQL
